@@ -10,7 +10,7 @@ import {
 import { anthropic } from "@ai-sdk/anthropic";
 
 const tools = {
-  // web_search_preview: openai.tools.webSearchPreview({}),
+  // web_search_preview: openai.tools.webSearchPreview({}), if you have anthropic access look below
   web_search: anthropic.tools.webSearch_20250305({
     maxUses: 1,
   }),
