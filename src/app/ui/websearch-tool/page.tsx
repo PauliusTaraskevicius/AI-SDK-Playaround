@@ -6,13 +6,12 @@ import { useChat } from "@ai-sdk/react";
 import { DefaultChatTransport } from "ai";
 import { ChatMessage } from "@/app/api/websearch-tool/route";
 
-
 export default function WebSearchToolPage() {
   const [input, setInput] = useState("");
 
   const { messages, sendMessage, status, error, stop } = useChat<ChatMessage>({
     transport: new DefaultChatTransport({
-      api: "/api/web-search-tool",
+      api: "/api/websearch-tool",
     }),
   });
 
@@ -27,7 +26,7 @@ export default function WebSearchToolPage() {
       {error && <div className="text-red-500 mb-4">{error.message}</div>}
       {messages.map((message) => {
         const sources = message.parts.filter(
-          (part) => part.type === "source-url"
+          (part) => part.type === "source-url",
         );
 
         return (
