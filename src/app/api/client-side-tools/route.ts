@@ -15,6 +15,8 @@ import { z } from "zod";
 
 import ImageKit from "imagekit";
 
+// imagekit.io
+
 const uploadImage = async (image: string) => {
   const imagekit = new ImageKit({
     publicKey: process.env.NEXT_PUBLIC_IMAGEKIT_PUBLIC_KEY as string,
@@ -59,7 +61,7 @@ const tools = {
       backgroundPrompt: z
         .string()
         .describe(
-          'Description of the new background (e.g., "tropical beach sunset", "modern office", "mountain landscape")'
+          'Description of the new background (e.g., "tropical beach sunset", "modern office", "mountain landscape")',
         ),
     }),
     outputSchema: z.string().describe("The transformed image URL"),
